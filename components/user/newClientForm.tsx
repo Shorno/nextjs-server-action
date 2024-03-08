@@ -8,17 +8,18 @@ import {useRef} from "react";
 
 
 const NewClientForm = () => {
-    const ref = useRef(null)
+    const ref = useRef<HTMLFormElement>(null)
 
 
     return (
         <div>
-            <form action={async (formData: FormData) => {
+            <form ref={ref} action={async (formData: FormData) => {
                 const response = await createClient(formData)
                 if (response?.error) {
                     toast.error(response.error)
                 } else {
                     toast.success("Client created successfully")
+                    ref.current?.reset()
                 }
             }} className={"flex flex-col gap-5 border p-5 shadow-lg w-96 rounded-md"}>
                 <Label htmlFor={"name"}>Name</Label>

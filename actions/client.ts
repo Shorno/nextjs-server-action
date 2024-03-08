@@ -24,7 +24,7 @@ export const createClient = async (formData : FormData) => {
 
     } catch (error){
         return {
-            error: "Something went wrong! Please try again."
+            error: "Failed to create client. Please try again later.."
         }
 
 
