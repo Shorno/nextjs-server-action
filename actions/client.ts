@@ -20,13 +20,13 @@ export const createClient = async (formData : FormData) => {
         }
         //saving the data to the database
         const saveClient = await new Client(data).save()
-        console.log(saveClient)
         revalidatePath("/")
 
-
-
     } catch (error){
-        console.log(error)
+        return {
+            error: "Something went wrong! Please try again."
+        }
+
 
     }
 }
