@@ -1,7 +1,10 @@
 import {Input} from "@/components/ui/input";
-import {Button} from "@/components/ui/button";
 import {Label} from "@/components/ui/label";
 import {createClient} from "@/actions/client";
+import SubmitButton from "@/components/user/SubmitButton";
+
+
+
 
 const NewClientForm = () => {
     return (
@@ -35,7 +38,7 @@ const NewClientForm = () => {
                     placeholder={"Serial"}
                     required
                 />
-                <Button type={"submit"}>Submit</Button>
+                <SubmitButton></SubmitButton>
             </form>
         </div>
     )

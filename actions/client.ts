@@ -7,6 +7,7 @@ import {revalidatePath} from "next/cache";
 
 export const createClient = async (formData : FormData) => {
     try {
+        await new Promise(resolve => setTimeout(resolve, 1000))
 
         await dbConnect() //connecting to the database
         //getting the data from the form
